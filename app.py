@@ -6,7 +6,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Charger le modèle
-model = joblib.load('logistic_model.pkl')
+model = joblib.load('random_forest_model.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():
