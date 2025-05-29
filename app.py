@@ -1,9 +1,11 @@
 # app.py
 from flask import Flask, request, jsonify
 import joblib
-import pandas as pd
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
 # Charger le modèle
 model = joblib.load('random_forest_model.pkl')
@@ -17,3 +19,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
